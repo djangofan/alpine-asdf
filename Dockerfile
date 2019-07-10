@@ -23,3 +23,7 @@ RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf && \
 RUN asdf plugin-add java && \
     asdf install java openjdk-12.0.1 && \
     asdf reshim
+
+
+# run with command:  docker run -it alpine-asdf bash
+
