@@ -21,9 +21,23 @@ RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf && \
     source ~/.bashrc
 
 RUN asdf plugin-add java && \
-    asdf install java openjdk-12.0.1 && \
-    asdf reshim
+    asdf install java openjdk-12.0.1
+
+RUN asdf plugin-add maven && \
+    asdf install maven 3.6.1
+
+RUN asdf plugin-add gradle && \
+    asdf install gradle 5.5
+
+RUN asdf reshim
 
 
 # run with command:  docker run -it alpine-asdf bash
+
+## need to fix
+## bash-5.0$ java -v
+## /asdf/.asdf/lib/commands/shim-exec.sh: line 26: /asdf/.asdf/installs/java/openjdk-12.0.1/bin/java: No such file or directory
+
+
+
 
